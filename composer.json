@@ -1,0 +1,58 @@
+{
+    "name": "alexjustesen/php-openbrewerydb",
+    "description": "Unofficial PHP SDK for Open Brewery DB",
+    "keywords": [
+        "alexjustesen",
+        "php",
+        "openbrewerydb",
+        "sdk",
+        "api",
+        "open",
+        "brewery",
+        "db",
+        "database"
+    ],
+    "homepage": "https://github.com/alexjustesen/php-openbrewerydb",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alex Justesen",
+            "email": "support@alexjustesen.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "sammyjo20/saloon": "v2.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.13",
+        "pestphp/pest": "^1.22",
+        "symfony/var-dumper": "^6.2"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "OpenBreweryDb\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OpenBreweryDb\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "fix-code": [
+            "./vendor/bin/php-cs-fixer fix --allow-risky=yes"
+        ],
+        "test": [
+            "./vendor/bin/pest"
+        ]
+    }
+}

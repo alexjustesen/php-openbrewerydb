@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace OpenBreweryDb\Requests;
 
 use Saloon\Enums\Method;
@@ -17,7 +19,8 @@ class ListBreweries extends Request
     public function __construct(
         protected int $perPage = 50,
         protected int $page = 1,
-    ) {}
+    ) {
+    }
 
     /**
      * Resolve the endpoint

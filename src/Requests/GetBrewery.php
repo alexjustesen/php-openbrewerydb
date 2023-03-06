@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace OpenBreweryDb\Requests;
 
 use Saloon\Enums\Method;
@@ -26,6 +28,6 @@ class GetBrewery extends Request
 
     public function __construct(
         protected string $obdb_id
-    )
-    {}
+    ) {
+    }
 }

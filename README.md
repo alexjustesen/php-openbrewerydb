@@ -86,3 +86,16 @@ $response = $obdb->send($request);
 ```php
 // to-do
 ```
+
+## Testing
+
+### Using PHP CS Fixer
+
+```
+PHP_CS_FIXER_IGNORE_ENV=1 tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src --allow-risky=yes
+```
+
+### Using Pest
+```
+./vendor/bin/pest
+``

@@ -1,27 +1,12 @@
-## Open Brewery DB SDK (PHP)
+# Open Brewery DB SDK (PHP)
 
 PHP SDK for [Open Brewery DB](https://www.openbrewerydb.org/) api.
 
-### To-do
-- [x] Get a brewery
-- [ ] Get a random brewery
-- [ ] List breweries
-    - [ ] pagination
-        - [ ] `page`
-        - [ ] `per_page`
-    - [ ] filters
-        - [ ] `by_city`
-        - [ ] `by_dist`
-        - [ ] `by_name`
-        - [ ] `by_state`
-        - [ ] `by_psotal`
-        - [ ] `by_type`
-    - [ ] sort
-- [ ] Search
-    - [ ] Search results
-    - [ ] Autocomplete results
+## Sponsor
 
-### Install
+Like this package? Consider [sponsoring](https://github.com/sponsors/alexjustesen) me to help me reach my goals.
+
+## Install
 
 ```
 composer require alexjustesen/php-openbrewerydb
@@ -49,17 +34,55 @@ The SDK makes use of [Saloon](https://docs.saloon.dev/) by Sam Carre, after a re
 In the example below we're requesting a single brewery and formatting the response as json.
 
 ```php
-$request = new GetBrewery(string 'brewery-id-goes-here');
+$request = new GetBrewery('brewery-id-goes-here');
 
 $response = $obdb->send($request);
 
 $response->json();
 ```
 
+#### List breweries
+
+```php
+$request = new ListBreweries();
+
+$response = $obdb->send($request);
+```
+
+Additional methods for filtering results:
+
+- `$request->filterByCity('hartford')` - `string`
+- `$request->filterByName('broad brook')` - `string`
+- `$request->filterByPostal('06002')` - `string`
+- `$request->filterByState('connecticut')` - `string`
+- `$request->filterByType('micro')` - `string`
+
+Additional methods for sorting results:
+
+- `$request->sortBy('type,name:asc')` - `string` or `array`
+- `$request->sortByDistance(41.96200785, -72.66266463)` - $lat: `float`, $lon: `float`
+
 #### Get a brewery
 
 ```php
-$request = new GetBrewery(string 'brewery-id-goes-here');
+$request = new GetBrewery('brewery-id-goes-here');
 
 $response = $obdb->send($request);
+```
+
+#### Get random breweries
+
+```php
+// to-do
+```
+
+#### Search breweries
+
+```php
+// to-do
+```
+#### Autocomplete breweries
+
+```php
+// to-do
 ```

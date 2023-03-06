@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace OpenBreweryDb;
 
-use OpenBreweryDb\Responses\OpenBreweryDbResponse;
 use Saloon\Http\Connector;
 
 class OpenBreweryDb extends Connector

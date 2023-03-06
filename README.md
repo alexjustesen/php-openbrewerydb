@@ -1,27 +1,12 @@
-## Open Brewery DB SDK (PHP)
+# Open Brewery DB SDK (PHP)
 
 PHP SDK for [Open Brewery DB](https://www.openbrewerydb.org/) api.
 
-### To-do
-- [x] Get a brewery
-- [ ] Get a random brewery
-- [x] List breweries
-    - [x] pagination
-        - [x] `page`
-        - [x] `per_page`
-    - [x] filters
-        - [x] `by_city`
-        - [x] `by_dist`
-        - [x] `by_name`
-        - [x] `by_state`
-        - [x] `by_postal`
-        - [x] `by_type`
-    - [x] sort
-- [ ] Search
-    - [ ] Search results
-    - [ ] Autocomplete results
+## Sponsor
 
-### Install
+Like this package? Consider [sponsoring](https://github.com/sponsors/alexjustesen) me to help me reach my goals.
+
+## Install
 
 ```
 composer require alexjustesen/php-openbrewerydb
@@ -83,4 +68,27 @@ Additional methods for sorting results:
 $request = new GetBrewery('brewery-id-goes-here');
 
 $response = $obdb->send($request);
+```
+
+#### Get random breweries
+
+```php
+// to-do
+```
+
+#### Search breweries
+
+```php
+// to-do
+```
+#### Autocomplete breweries
+
+```php
+// to-do
+```
+
+## Testing
+
+```
+./vendor/bin/pest
 ```

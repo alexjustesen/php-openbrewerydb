@@ -84,12 +84,17 @@ $response = $obdb->send($request);
 #### Search breweries
 
 ```php
-// to-do
+$request = new SearchBreweries('dog');
+
+$response = $obdb->send($request);
 ```
+
 #### Autocomplete breweries
 
 ```php
-// to-do
+$request = new AutocompleteBreweries('dog');
+
+$response = $obdb->send($request);
 ```
 
 ## Testing

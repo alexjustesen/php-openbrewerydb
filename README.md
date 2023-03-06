@@ -5,18 +5,18 @@ PHP SDK for [Open Brewery DB](https://www.openbrewerydb.org/) api.
 ### To-do
 - [x] Get a brewery
 - [ ] Get a random brewery
-- [ ] List breweries
-    - [ ] pagination
-        - [ ] `page`
-        - [ ] `per_page`
-    - [ ] filters
-        - [ ] `by_city`
-        - [ ] `by_dist`
-        - [ ] `by_name`
-        - [ ] `by_state`
-        - [ ] `by_psotal`
-        - [ ] `by_type`
-    - [ ] sort
+- [x] List breweries
+    - [x] pagination
+        - [x] `page`
+        - [x] `per_page`
+    - [x] filters
+        - [x] `by_city`
+        - [x] `by_dist`
+        - [x] `by_name`
+        - [x] `by_state`
+        - [x] `by_postal`
+        - [x] `by_type`
+    - [x] sort
 - [ ] Search
     - [ ] Search results
     - [ ] Autocomplete results
@@ -49,17 +49,38 @@ The SDK makes use of [Saloon](https://docs.saloon.dev/) by Sam Carre, after a re
 In the example below we're requesting a single brewery and formatting the response as json.
 
 ```php
-$request = new GetBrewery(string 'brewery-id-goes-here');
+$request = new GetBrewery('brewery-id-goes-here');
 
 $response = $obdb->send($request);
 
 $response->json();
 ```
 
+#### List breweries
+
+```php
+$request = new ListBreweries();
+
+$response = $obdb->send($request);
+```
+
+Additional methods for filtering results:
+
+- `$request->filterByCity('hartford')` - `string`
+- `$request->filterByName('broad brook')` - `string`
+- `$request->filterByPostal('06002')` - `string`
+- `$request->filterByState('connecticut')` - `string`
+- `$request->filterByType('micro')` - `string`
+
+Additional methods for sorting results:
+
+- `$request->sortBy('type,name:asc')` - `string` or `array`
+- `$request->sortByDistance(41.96200785, -72.66266463)` - $lat: `float`, $lon: `float`
+
 #### Get a brewery
 
 ```php
-$request = new GetBrewery(string 'brewery-id-goes-here');
+$request = new GetBrewery('brewery-id-goes-here');
 
 $response = $obdb->send($request);
 ```

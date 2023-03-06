@@ -86,9 +86,3 @@ $response = $obdb->send($request);
 ```php
 // to-do
 ```
-
-## Testing
-
-```
-./vendor/bin/pest
-```

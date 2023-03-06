@@ -73,8 +73,13 @@ $response = $obdb->send($request);
 #### Get random breweries
 
 ```php
-// to-do
+$request = new GetRandomBrewery();
+
+$response = $obdb->send($request);
 ```
+
+**Available parameters**
+- `size`, default = `1`
 
 #### Search breweries
 
